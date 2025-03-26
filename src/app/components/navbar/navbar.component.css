@@ -1,0 +1,32 @@
+.navbar {
+  padding: 10px 20px;
+  /* background-color: #064d47;
+  background: linear-gradient(180deg, #253c3c, #1d4949); */
+
+}
+.navbar-brand{
+ font-size: 20px;
+}
+
+.letter{
+  font-size: 20px;
+  color:whitesmoke
+}   
+  
+
+.navbar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+}   
+
+.navbar-nav .nav-link {
+  font-size: 18px; 
+  margin: 0 10px; 
+}
+
+.fixed-top {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000; 
+}

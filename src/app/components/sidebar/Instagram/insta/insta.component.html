@@ -1,0 +1,272 @@
+ <!-- <div class="profile-container">
+    <div class="profile-header">
+        <img  class="profileimg" src ="https://picsum.photos/id/1/200/300"  alt="" class="profile-pic">
+        <div class="profile-info">
+            <h2 class="username">Mahesh</h2>
+            <div class="stats">
+                <span><b>100</b> posts</span>
+                <span><b>5K</b> followers</span>
+                <span><b>200</b> following</span>
+            </div>
+            <p class="bio">Coder | Software Engineer | Building the future, one line of code at a time.</p>
+            <button class="edit-profile">Edit Profile</button>
+        </div> 
+     </div> 
+
+    <div class="stories-container">
+        <div class="story"><img src="https://picsum.photos/id/100/200/300" alt=""></div>
+        <div class="story"><img src="https://picsum.photos/id/13/200/300" alt=""></div>
+        <div class="story"><img src="https://picsum.photos/id/14/200/300" alt=""></div>
+        <div class="story"><img src="https://picsum.photos/id/16/200/300" alt=""></div>
+        <div class="story"><img src="https://picsum.photos/id/18/200/300" alt=""></div>
+        <div class="story"><img src="https://picsum.photos/id/17/200/300" alt=""></div>
+    </div>
+
+   
+    <div class="schedule-post">
+        <input type="file" id="postImage">
+        <input type="datetime-local" class="datetime" id="scheduledTime">
+        <button onclick="schedulePost() " class="btn btn-success">Schedule Post</button>
+    </div>
+
+   
+    <div class="profile-tabs">
+        <button class="tab active">Posts</button>
+        <button class="tab">Reels</button>
+        <button class="tab">Tagged</button>
+    </div>
+    <div class="posts-grid" id="postsGrid">
+     
+        <div class="post">
+            <img src="https://picsum.photos/id/101/200/300" alt="Post Image">
+            <div class="">
+                <span>❤️ 120</span>
+                <span>💬 30</span>
+            </div>
+        </div>
+        <div class="post">
+            <img src="https://picsum.photos/id/106/200/300" alt="Post Image">
+            <div class="">
+                <span>❤️ 250</span>
+                <span>💬 20</span>
+            </div>
+        </div>
+
+        <div class="post">
+          <img src="https://picsum.photos/id/108/200/300" alt="Post Image">
+          <div class="">
+              <span>❤️ 50</span>
+              <span>💬 10</span>
+          </div>
+
+        </div>
+
+        <div class="post">
+          <img src="https://picsum.photos/id/109/200/300" alt="Post Image">
+          <div class="">
+              <span>❤️ 80</span>
+              <span>💬 0</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  --> 
+
+  <div class="sidebar">
+    <h2 class="insta-name">Instagram</h2>
+    <a href="https://www.facebook.com/v18.0/dialog/oauth?
+    client_id=659227143450593
+    &redirect_uri=http://localhost:4200/auth/callback
+    &scope=pages_show_list,instagram_basic,instagram_manage_comments,instagram_manage_insights,instagram_content_publish
+    &response_type=code">
+    Login with Instagram
+  </a> 
+
+  
+  
+    <!-- Profile Image -->
+    <div class="profile">
+        <div class="profile-img">
+            <img [src]="userProfile.profile_picture_url" alt="profile">
+        </div>
+        <div class="name">
+            <h1>{{userProfile.username}}</h1>
+        </div>
+        <span>{{userProfile.name}}</span>
+    </div>
+    <!-- About -->
+    <div class="about">
+        <div class="box">
+            <h3>{{posts.length}}</h3>
+            <span>Posts</span>
+        </div>
+        <div class="box">
+            <h3>{{userProfile.followers_count}}</h3>
+            <span>Followers</span>
+        </div>
+        <div class="box">
+            <h3>11</h3>
+            <span>Following</span>
+        </div>
+    </div>
+
+    <!-- Menu --> 
+    <div class="menu">
+        <a href="#" class="active">
+            <span class="icon"><i class="ri-function-line"></i></span> Feed
+        </a>
+        <a>
+            <span class="icon"><i class="ri-notification-4-line"></i></span> Notification
+        </a>
+        <a>
+            <span class="icon"><i class="ri-search-line"></i></span> Explore
+        </a>
+        <a>
+            <span class="icon"><i class="ri-mail-unread-fill"></i></span> Messages
+        </a>
+        <a>
+            <span class="icon"><i class="ri-send-plane-fill"></i></span> Direct
+        </a>
+        <a href="">
+            <span class="icon"><i class="ri-bar-chart-2-fill"></i></span> Stats
+        </a>
+        <a href="">
+            <span class="icon"><i class="ri-settings-5-line"></i></span> Setting
+        </a>
+        <a href="">
+            <span class="icon"><i class="ri-logout-box-r-line"></i></span> Logout
+        </a>
+    </div>
+</div>
+
+<!-- Main Home -->
+<div class="main-home">
+    <div class="header">
+      
+        <div class="search">
+            <i class="ri-search-line"></i>
+            <input type="text" placeholder="Search">
+        </div>
+        <div  class="header-content">
+            <i class="ri-notification-4-line"></i>
+            <i class="ri-mail-unread-fill"></i>
+           </div>
+        
+                <div class="add-post-container">
+                    <input type="text" [(ngModel)]="newPostImage" placeholder="Enter Image URL">
+                    <input type="text" [(ngModel)]="newPostCaption" placeholder="Enter Caption">
+                    <input type="datetime-local"  *ngIf="isScheduledPost" [(ngModel)]="scheduledTime" placeholder="Select Scheduled Time">
+                    
+                    <button (click)="postOnInstagram()" [disabled]="isLoading">
+                        <span *ngIf="isLoading">Uploading...</span>
+                        <span *ngIf="!isLoading">Upload Post</span>
+                     
+                      </button>
+                     
+                    </div>
+                    <div>
+                    <button class="btn btn-danger" style="padding: 2px 4px;" (click)="logout()">Logout</button>
+                </div>
+    </div>
+
+    <!-- Stories -->  
+
+    <div class="stories">
+        <h1>Stories</h1>
+        <a  class="btn bts" (click)="toggleUploadForm(true)">
+            <i class="ri-play-circle-line"></i>
+            <div class="text">Schedule Post</div>
+        </a>
+       
+    </div> 
+    <!-- <div class="stories">
+        <div class="stories-img color" (click)="toggleStoryInput()">
+            <img [src]="userProfile.profile_picture_url" alt="profile">
+            <div  class="add">+</div>
+        </div>  
+        <div class="story-input" *ngIf="showInputBox">
+            <input type="text" [(ngModel)]="newStoryUrl" placeholder="Enter image URL">
+            <button (click)="uploadStory()">Post</button>
+          </div>
+        <div class="stories-img" *ngFor="let story of stories" (click)="viewStory(story.media_url)">
+            <img *ngIf="story.media_url" [src]="story.media_url" alt="story" (error)="onImageError($event)">
+        </div> 
+        <div class="stories-img"><img src="https://picsum.photos/id/232/200/300" alt="profile"></div>
+        <div class="stories-img"><img src="https://picsum.photos/id/236/200/300" alt="profile"></div>
+        <div class="stories-img"><img src="https://picsum.photos/id/239/200/300" alt="profile"></div>
+        <div class="stories-img"><img src="https://picsum.photos/id/232/200/300" alt="profile"></div>
+        <div class="stories-img"><img src="https://picsum.photos/id/233/200/300" alt="profile"></div>
+        <div class="stories-img"><img src="https://picsum.photos/id/227/200/300" alt="profile"></div>
+        <div class="stories-img"><img src="https://picsum.photos/id/217/200/300" alt="profile"></div>
+        <div class="stories-img"><img src="https://picsum.photos/id/247/200/300" alt="profile"></div>
+    </div> -->
+    <div class="stories">
+        <div class="stories-img add-story" (click)="toggleStoryInput()">
+            <img [src]="userProfile.profile_picture_url" alt="profile">
+            <div class="add">+</div>
+        </div>
+
+        <div class="story-input" *ngIf="showInputBox">
+            <input type="text" [(ngModel)]="newStoryUrl" placeholder="Enter image URL">
+            <button (click)="uploadStory()">{{isLoading ? 'Uploading...':"Upload story "}}</button>
+        </div>
+        <div *ngIf="isLoading" class="loading-overlay">
+            <div class="spinner"></div>
+          </div>
+
+        <div class="stories-img" *ngFor="let story of stories" (click)="viewStory(story.media_url)">
+            <img [src]="story.media_url" alt="story">
+        </div>
+    </div>
+  
+    <!-- Feed -->
+    <div class="feed">
+        <h1>Feed</h1>
+        <div class="feed-text">
+            <h2>Latest</h2>
+            <span>Popular</span>
+        </div>
+    </div>
+
+  
+
+<div class="container mt-4">
+    <div class="row row-cols-3 ms-3 justify-content-start"> <!-- Auto-fits into 3 columns per row -->
+        <div *ngFor="let post of posts" class="col d-flex justify-content-center mb-4">
+            <div class="post-box">
+                <img [src]="post.media_url" alt="post" class="img-fluid">
+                <div class="post-info">
+                    <div class="post-profile">
+                        <div class="post-img">
+                            <img [src]="userProfile.profile_picture_url" alt="profile">
+                        </div>
+                        <h3>{{userProfile.username}}</h3>
+                    </div>
+                    <div class="likes">
+                        <i class="ri-heart-line"></i> <span>{{post.like_count}}</span>
+                        <i class="ri-chat-3-line" (click)="toggleCommentBox(post.id)"></i> <span>{{post.comments_count}}</span>
+                    </div>
+                </div>
+                <p class="caption">{{post.caption}}</p>
+                <div *ngIf="selectedPostId === post.id" class="comment-box">
+                    <input type="text" [(ngModel)]="commentText" placeholder="Write a comment..." class="form-control" />
+                    <button (click)="postComment()" [disabled]="isPosting" class="btn btn-primary mt-2">Post</button>
+                </div>
+                <div>
+                    <ol>
+                        <li *ngFor="let comment of post.comments let i=index">
+                            <p>{{ i+1 }} . <strong>{{ comment.username || 'Unknown User' }}</strong>: {{ comment.text }}</p>
+                    
+                          
+                        
+                       </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #noPosts>
+    <p>No posts available.</p>
+  </ng-template>

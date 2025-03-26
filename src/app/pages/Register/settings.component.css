@@ -1,0 +1,28 @@
+
+.container {
+  margin-top: 20px;
+}
+
+.control-row {
+  align-items: flex-end;
+}
+
+.control {
+  flex: 1;
+}
+
+button {
+  padding: 0.6rem 1.75rem;
+} 
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+.alert {
+  color: white;
+  background-color: red;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+}

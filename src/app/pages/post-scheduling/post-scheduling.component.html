@@ -1,0 +1,28 @@
+<!-- <div class="container">
+
+  <form [formGroup]="postScheduling" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+    <h2 class="form-title">Post Scheduling</h2>
+    <div class="mb-3">
+      <label for="postContent" class="form-label">Post Content</label>
+      <textarea class="form-control" id="postContent" rows="3" formControlName="post"></textarea>
+      <div *ngIf="postScheduling.get('post')?.invalid && postScheduling.get('post')?.touched" class="text-danger">
+        Post content is required.
+      </div>
+    </div>
+     
+    <div class="mb-3">
+      <label for="scheduleDate" class="form-label">Schedule Time</label>
+      <input type="datetime-local" class="form-control" id="scheduleDate" formControlName="time">
+      <div *ngIf="postScheduling.get('time')?.invalid && postScheduling.get('time')?.touched" class="text-danger">
+        Schedule time is required.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="postImage" class="form-label">Upload Image</label>
+      <input type="file" class="form-control" id="postImage" (change)="onFileSelected($event)">
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="postScheduling.invalid">Schedule Post</button>
+  </form>
+</div>  -->

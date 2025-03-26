@@ -1,0 +1,22 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h2 style="color: aliceblue;">Login</h2>
+
+  <div class="control-row">
+    <div class="control no-margin">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" />
+    </div>
+    
+    <div class="control no-margin">
+      <label for="password">Password</label>
+      <input id="password" type="password" formControlName="password" />
+    </div>
+
+    <button class="button" type="submit">Login</button>
+  </div>
+
+  <p *ngIf="emailIsInvalid" class="control-error">Please enter a valid email address.</p>
+  <p *ngIf="passwordIsInvalid" class="control-error">
+    Please enter a valid password (must be at least 6 characters long).
+  </p>
+</form>

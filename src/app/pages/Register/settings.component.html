@@ -1,0 +1,147 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h2 style="color: aliceblue;">Welcome on board!</h2>
+  <p style="color: aliceblue;" >We just need a little bit of data from you to get you started 🚀</p>
+  <div class="control">
+    <label for="email">Email</label>
+    <input id="email" type="email" formControlName="email" />
+    <div class="error" *ngIf="form.controls['email'].invalid && form.controls['email'].touched">
+      Email is required and must be valid.
+    </div> 
+  </div> 
+
+  <div class="control-row">
+    <div class="control">
+     
+      <label for="password">Password</label>
+      <input id="password" type="password" formControlName="password" />
+      <div class="error" *ngIf="form.controls['password'].invalid && form.controls['password'].touched">
+        Password is required (min 6 characters).
+      </div>
+    </div>
+
+    <div class="control">
+
+      <label for="confirm-password">Confirm Password</label>
+      <input id="confirm-password" type="password" formControlName="confirmPassword" />
+      <div class="error" *ngIf="form.hasError('mismatch') && form.controls['confirmPassword'].touched">
+        Passwords do not match.
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div>
+    <div class="control-row">
+      <div class="control">
+        <label for="first-name">First Name</label>
+        <input type="text" id="first-name" formControlName="firstName" />
+        <div class="error" *ngIf="form.controls['firstName'].invalid && form.controls['firstName'].touched">
+          First name is required.
+        </div>
+      </div>
+
+      <div class="control">
+        <label for="last-name">Last Name</label>
+        <input type="text" id="last-name" formControlName="lastName" />
+        <div class="error" *ngIf="form.controls['lastName'].invalid && form.controls['lastName'].touched">
+          Last name is required.
+        </div>
+      </div>
+    </div>
+<!-- 
+    <fieldset>
+      <legend>Your Address</legend>
+
+      <div class="control-row">
+        <div class="control">
+          <label for="street">Street</label>
+          <input type="text" id="street" name="street" />
+        </div>
+
+        <div class="control">
+          <label for="number">Number</label>
+          <input type="text" id="number" name="number" />
+        </div>
+      </div>
+
+      <div class="control-row">
+        <div class="control">
+          <label for="postal-code">Postal Code</label>
+          <input type="text" id="postal-code" name="postal-code" />
+        </div>
+
+        <div class="control">
+          <label for="city">City</label>
+          <input type="text" id="city" name="city" />
+        </div>
+      </div>
+    </fieldset> -->
+  </div>
+
+  <hr />
+
+  <!-- <div class="control-row">
+    <div class="control">
+      <label for="role">What best describes your role?</label>
+      <select id="role" name="role">
+        <option value="student">Student</option>
+        <option value="teacher">Teacher</option>
+        <option value="employee">Employee</option>
+        <option value="founder">Founder</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+  </div> -->
+
+  <!-- <fieldset>
+    <legend>How did you find us?</legend>
+    <div class="control">
+      <input
+        type="checkbox"
+        id="google"
+        name="acquisition"
+        value="google"
+      />
+      <label for="google">Google</label>
+    </div>
+
+    <div class="control">
+      <input
+        type="checkbox"
+        id="friend"
+        name="acquisition"
+        value="friend"
+      />
+      <label for="friend">Referred by friend</label>
+    </div>
+
+    <div class="control">
+      <input
+        type="checkbox"
+        id="other"
+        name="acquisition"
+        value="other"
+      />
+      <label for="other">Other</label>
+    </div>
+  </fieldset> -->
+
+  <div class="control-row">
+    <div class="control">
+      <input type="checkbox" id="terms-and-conditions" formControlName="terms" />
+      <label for="terms-and-conditions">I agree to the terms and conditions</label>
+      <div class="error" *ngIf="form.controls['terms'].invalid && form.controls['terms'].touched">
+        You must agree to the terms.
+      </div>
+    </div>
+    </div>
+
+ 
+
+  <p class="form-actions">
+    <button type="button" class="button button-flat" (click)="onReset()">Reset</button>
+    <button type="submit" class="button">Sign up</button>
+  </p>
+  <p style="text-align: center; color: white;">
+    Already have an account? <a routerLink="/login" style="color: cyan; text-decoration: none;">Login</a>
+  </p>
+</form>

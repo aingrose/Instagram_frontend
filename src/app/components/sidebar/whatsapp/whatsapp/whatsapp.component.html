@@ -1,0 +1,14 @@
+<!------>
+ <div class="container">
+    <div class="card">
+      <h2>📩 Send WhatsApp Message</h2>
+  
+      <input type="text" placeholder="Enter phone number" [(ngModel)]="phone" class="input-box">
+      
+      <textarea placeholder="Enter your message" [(ngModel)]="message" class="textarea-box"></textarea>
+  
+      <button (click)="sendMessage()" class="send-btn">🚀 Send Message</button>
+      
+      <p class="status-message">{{ status }}</p>
+    </div>
+  </div>

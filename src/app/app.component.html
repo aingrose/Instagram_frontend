@@ -1,0 +1,16 @@
+
+ <div *ngIf="!isInstagramPage">
+  <app-navbar></app-navbar>
+  <div class="d-flex">
+    <app-sidebar></app-sidebar>
+    <div class="flex-grow-1 p-4">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>
+
+<!-- Instagram Page (without navbar & sidebar) -->
+<div *ngIf="isInstagramPage">
+  <router-outlet></router-outlet>
+</div>
