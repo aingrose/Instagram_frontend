@@ -17,7 +17,7 @@ body {
   padding: 1.5rem;
 }
 
-/* Fixed excessive padding */
+
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -213,7 +213,7 @@ hr {
   color: #869999;
 }
 
-/* Input Error Styling */
+
 .control:has(.ng-invalid.ng-touched.ng-dirty) label {
   color: #f98b75;
 }
