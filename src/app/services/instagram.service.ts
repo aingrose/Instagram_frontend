@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class InstagramService {
-  private apiUrl = 'http://localhost:3000';
+  private apiUrl = 'https://instagram-backend-1-rlhb.onrender.com';
 
   constructor(private http: HttpClient) {}
 
@@ -69,7 +69,7 @@ getComments(postId: string): Observable<any> {
 }
 
 getCommentAuthor(commentId: string): Observable<any> {
-  const url = `http://localhost:3000/post/get-comment-author/${commentId}`; // Adjust backend URL as needed
+  const url = `https://instagram-backend-1-rlhb.onrender.com/post/get-comment-author/${commentId}`; // Adjust backend URL as needed
   return this.http.get(url);
 }
 
