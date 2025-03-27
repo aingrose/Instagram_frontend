@@ -1,15 +1,38 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>SocialMediaFrontend</title>
+  <title>Social Media Frontend</title>
   <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="A social media management platform for scheduling and managing posts across multiple platforms.">
+  <meta name="author" content="Your Name">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Preload Google Fonts for performance -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Lato:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Ensure styles load properly -->
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Lato:wght@400;700&display=swap">
+  </noscript>
+
+  <!-- Open Graph meta tags for better social sharing -->
+  <meta property="og:title" content="Social Media Management Tool">
+  <meta property="og:description" content="Easily schedule and manage your social media posts.">
+  <meta property="og:image" content="https://yourwebsite.com/preview-image.jpg">
+  <meta property="og:url" content="https://yourwebsite.com">
+  <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
   <app-root></app-root>
+
+  <!-- Add a simple loading message in case Angular takes time to load -->
+  <noscript>
+    <strong>Please enable JavaScript to use this application.</strong>
+  </noscript>
 </body>
 </html>
