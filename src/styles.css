@@ -1,8 +1,12 @@
-/* ///@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Lato:wght@400;700&display=swap"); */
-
+/* Removed inline import, use local font preload instead */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Lato", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(#d0d6d9, #b1b4ba);
+  color: #d9e2f1;
+  min-height: 100vh;
 }
 
 .flex-grow-1 {
@@ -12,68 +16,55 @@ body {
 .p-4 {
   padding: 1.5rem;
 }
- 
+
+/* Fixed excessive padding */
 .sidebar {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 500% 50px;
- 
+  padding: 20px 50px;
 }
 
-
-.navbar-brand{
+.navbar-brand {
   padding: 40px;
- margin: 10px;
-  
+  margin: 10px;
 }
 
 .social-icon {
-  font-size: 30px;  
+  font-size: 30px;
   text-decoration: none;
   width: 50px;
   height: 50px;
   display: flex;
   align-items: center;
-  justify-content:space-evenly;
+  justify-content: center;
   border-radius: 50%;
   color: white;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-} 
-
+}
 
 .social-icon i {
   transition: transform 0.3s ease;
 }
- 
+
 .social-icon:hover i {
   transform: scale(1.1);
 }
 
-.social-icon:nth-child(1) { background: #E4405F; } 
+/* Social media colors */
+.social-icon:nth-child(1) { background: #E4405F; }
 .social-icon:nth-child(2) { background: #1877F2; }
-.social-icon:nth-child(3) { background: #25D366; } 
-.social-icon:nth-child(4) { background: #1DA1F2; } 
-.social-icon:nth-child(5) { background: #0077B5; } 
+.social-icon:nth-child(3) { background: #25D366; }
+.social-icon:nth-child(4) { background: #1DA1F2; }
+.social-icon:nth-child(5) { background: #0077B5; }
 
 .social-icon:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transform: translateY(-2px);
 }
 
-
 * {
   box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: "Lato", serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(#d0d6d9, #b1b4ba);
-  color: #d9e2f1;
-  min-height: 100vh;
 }
 
 header {
@@ -99,6 +90,7 @@ header h1 {
   color: #2f4444;
 }
 
+/* Form Styling */
 form {
   width: 90%;
   max-width: 40rem;
@@ -127,18 +119,7 @@ fieldset {
   font-weight: bold;
 }
 
-.control input {
-  display: block;
-  width: 100%;
-  max-width: 15rem;
-  padding: 0.5rem;
-  font-size: 1rem;
-  border-radius: 4px;
-  border: 1px solid #758a8a;
-  background-color: #869999;
-  color: #142020;
-}
-
+.control input,
 .control select {
   display: block;
   width: 100%;
@@ -165,8 +146,6 @@ fieldset {
   width: auto;
   max-width: none;
   margin-right: 0.5rem;
-  border-radius: 0;
-  border: none;
   background-color: transparent;
   color: #d9e2f1;
 }
@@ -176,8 +155,6 @@ fieldset {
   flex-wrap: wrap;
   gap: 0.5rem;
   color: #ffca99;
-  height: 0.5rem;
-  padding: 0.25rem 0 0 0;
   height: 1.5rem;
   margin-bottom: 1rem;
 }
@@ -203,6 +180,7 @@ hr {
   border: 1px solid #147b73;
 }
 
+/* Button Styling */
 .form-actions {
   display: flex;
   justify-content: flex-end;
@@ -235,6 +213,7 @@ hr {
   color: #869999;
 }
 
+/* Input Error Styling */
 .control:has(.ng-invalid.ng-touched.ng-dirty) label {
   color: #f98b75;
 }
@@ -244,18 +223,15 @@ input.ng-invalid.ng-touched.ng-dirty {
   border-color: #f84e2c;
 }
 
-
+/* Sidebar Styling */
 .sidebar {
   width: 60px;
-
-  background-color: #09736a;
   background: linear-gradient(180deg, #253c3c, #1d4949);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
 }
-       
 
 .social-icon {
   color: white;
@@ -263,22 +239,21 @@ input.ng-invalid.ng-touched.ng-dirty {
   margin: 15px 0;
   text-decoration: none;
   display: flex;
-  justify-content:space-evenly;
-  
+  justify-content: center;
 }
 
 .social-icon:hover {
   color: #007bff;
 }
 
-
 .sidebar {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
+/* Dark Mode */
 .dark-mode {
   background-color: #121212;
   color: #fff;
-} 
-
+}
