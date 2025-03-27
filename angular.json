@@ -5,6 +5,7 @@
   "projects": {
     "social-media-frontend": {
       "projectType": "application",
+      "root": ".",  // <-- Add this line
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
