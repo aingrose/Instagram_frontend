@@ -1,13 +1,12 @@
 {
   "name": "social-media-frontend",
   "version": "0.0.0",
- "scripts": {
-  "start": "ng serve",
-  "build": "npx ng build --configuration=production",
-  "watch": "ng build --watch --configuration development",
-  "test": "ng test"
-}
-,
+  "scripts": {
+    "start": "ng serve",
+    "build": "npx ng build --configuration=production",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^19.1.0",
@@ -18,18 +17,18 @@
     "@angular/platform-browser": "^19.1.0",
     "@angular/platform-browser-dynamic": "^19.1.0",
     "@angular/router": "^19.1.0",
+    "axios": "^1.6.7",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "ng2-charts": "^4.1.1",
+    "ngx-toastr": "^17.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.15.0",
-    "axios": "^1.6.7",  
-    "ngx-toastr": "^17.0.1",  
-    "ng2-charts": "^4.1.1"   
+    "zone.js": "~0.15.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^19.1.7",
-    "@angular/cli": "^19.1.7",
+    "@angular/cli": "^19.2.5",
     "@angular/compiler-cli": "^19.1.0",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.5.0",
